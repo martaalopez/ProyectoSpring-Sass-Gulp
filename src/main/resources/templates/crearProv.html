@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header  class="header header-init">
+  <div class="contenido-header contenedor">
+    <div class="barra">
+      <div class="logo">
+        <img src="/img/logis.png" alt="logo" >
+      </div>
+      <nav class="nav-principal">
+        <a th:href="@{/show}">Productos</a>
+        <a th:href="@{/create}">Insertar nuevos productos</a>
+        <a th:href="@{/mostrarProveedor}"> Proveedores</a>
+      </nav>
+    </div>
+    <div class="texto-header">
+      <h1>PROVEEDORES</h1>
+    </div>
+  </div>
+</header>
+<main class="container contenedor-principal text-center">
+
+  <form th:object="${proveedor}" th:action="@{/mostrarProveedor}" class="formulario" method="post">
+    <div class="campo">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="telefono">Teléfono:</label>
+      <input type="text" class="form-control" id="telefono" name="telefono">
+    </div>
+
+    <!-- elegir producto -->
+    <div class="campo">
+      <label for="productoId">Producto:</label>
+      <select class="form-control" id="productoId" name="productoId">
+        <option value="">Seleccionar producto</option>
+        <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombre}"></option>
+      </select>
+    </div>
+    <div class="campo">
+    <button type="submit">Guardar</button>
+    </div>
+  </form>
+
+  <!-- lista de proveedores -->
+  <h2 th:text="${titulo}"></h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterar sobre la lista de proveedores -->
+    <tr th:each="proveedor : ${proveedores}">
+      <td th:text="${proveedor.id}"></td>
+      <td th:text="${proveedor.nombre}"></td>
+      <td th:text="${proveedor.telefono}"></td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

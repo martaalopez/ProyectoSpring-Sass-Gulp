@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap" rel="stylesheet">
+    <title>Listar Productos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="header header-inicio">
+    <div class="contenido-header contenedor">
+        <div class="barra">
+            <div class="logo">
+                <img src="/img/logis.png" alt="logo">
+            </div>
+            <nav class="nav-principal">
+                <a th:href="@{/show}">Productos</a>
+                <a th:href="@{/create}">Insertar nuevos productos</a>
+                <a th:href="@{/mostrarProveedor}">Proveedores</a>
+            </nav>
+        </div>
+        <div class="texto-header">
+            <h1>LISTADO DE PRODUCTOS</h1>
+        </div>
+    </div>
+</header>
+<main class="container contenedor-principal ">
+    <table class="table">
+        <thead class="text-center">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.id}">Cargando...</td>
+            <td th:text="${producto.nombre}">Cargando...</td>
+            <td th:text="${producto.precio}">Cargando...</td>
+            <td th:text="${producto.tipo}">Cargando...</td>
+            <td>
+                <a th:href="@{/edit/{id}(id=${producto.id})}" th:text="Editar" title="editar registro"></a>
+            </td>
+            <td>
+                <a th:href="@{/delete/{id}(id=${producto.id})}" th:text="Eliminar" title="eliminar registro"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,297 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background-color: #455A64;
+}
+
+p {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  margin: 0 0 5rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg_primario {
+  background-color: #E8505B;
+}
+
+.header {
+  padding: 5rem 5rem;
+  position: relative;
+}
+@media (min-width: 480px) {
+  .header {
+    padding: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 3rem;
+  }
+}
+@media (min-width: 1000px) {
+  .header {
+    padding: 2rem;
+  }
+}
+.header::before {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+.header .contenido-header {
+  position: relative;
+  margin-top: 5rem;
+}
+.header .contenido-header h1 {
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
+@media (min-width: 768px) {
+  .header .contenido-header h1 {
+    margin-top: 4rem;
+  }
+}
+
+.table {
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.header-inicio {
+  background-image: url(../img/local.jpg);
+  background-repeat: no-repeat;
+}
+
+.contenedor-principal {
+  width: 70%;
+  max-width: 900px;
+  margin: 0 auto;
+  /*box-sizing: border-box;*/
+}
+
+.nav-principal {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .nav-principal {
+    flex-direction: row;
+    gap: 20rem;
+  }
+}
+.nav-principal a {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 70;
+  margin-bottom: 1rem;
+}
+
+.barra {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .barra {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.barra .logo {
+  width: 50%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .barra .logo {
+    width: 20rem;
+    margin: 0;
+  }
+}
+
+.contenedor-principal {
+  background-color: #FFFFFF;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .contenedor-principal {
+    padding: 10rem;
+    margin-top: -5rem;
+    position: relative;
+  }
+}
+
+body {
+  overflow: auto;
+}
+
+body {
+  overflow: auto;
+}
+
+@media (min-width: 1000px) {
+  .contenido_formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 5rem);
+    column-gap: 5rem;
+    background-image: url(../img/producto.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 30%;
+  }
+}
+
+.formulario .campo {
+  margin-bottom: 2rem;
+}
+.formulario .campo:last-of-type {
+  margin-bottom: 0;
+}
+.formulario .campo label {
+  text-transform: uppercase;
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.formulario .campo input {
+  width: 100%;
+  border: 0.5rem solic #E8505B;
+  padding-right: 150px;
+  padding-bottom: 5px;
+  padding-left: 150px;
+}
+.formulario .campo button[type=submit] {
+  background-color: #E8505B;
+  width: 100%;
+  border: none;
+  padding-right: 150px;
+  padding-bottom: 5px;
+  padding-left: 150px;
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.formulario .campo button[type=submit]:hover {
+  cursor: pointer;
+}
+
+.body {
+  overflow: auto;
+}
+
+.header {
+  padding: 5rem 0;
+  position: relative;
+}
+@media (min-width: 480px) {
+  .header {
+    padding: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 4rem;
+  }
+}
+@media (min-width: 1000px) {
+  .header {
+    padding: 2rem;
+  }
+}
+.header::before {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+.header .content-header {
+  position: relative;
+  margin-top: 5rem;
+}
+.header .content-header h1 {
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
+@media (min-width: 768px) {
+  .header .content-header h1 {
+    margin-top: 10rem;
+  }
+}
+
+.header-init {
+  background-image: url(../img/proveedor.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.barra {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 480px) {
+  .barra {
+    flex-direction: column;
+    align-items: center;
+  }
+}

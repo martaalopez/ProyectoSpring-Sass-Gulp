@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header  class="header header-insertar">
+  <div class="content-header contenedor">
+    <div class="barra">
+      <div class="logo">
+        <img src="/img/logis.png" alt="logo" >
+      </div>
+      <nav class="nav-principal">
+        <a th:href="@{/show}">Mostrar Productos</a>
+        <a th:href="@{/create}">Insertar nuevos productos</a>
+        <a th:href="@{/mostrarProveedor}">Mostrar Proveedores</a>
+      </nav>
+    </div>
+    <div class="texto-header">
+      <h1>INSERTAR PRODUCTOS</h1>
+    </div>
+  </div>
+
+</header>
+<main class="container contenedor-principal text-center">
+  <h1 th:text="${titulo}"></h1>
+  <div class="contenido_formulario">
+  <form th:action="@{/save}" th:object="${producto}" method="post" class="formulario">
+    <div class="campo">
+      <input type="hidden" th:field="*{id}" required>
+      <label for="nombre">Nombre:</label>
+      <input type="text" placeholder="Nombre" id="nombre" th:field="*{nombre}" required>
+    </div>
+    <div class="campo">
+      <label for="precio">Precio:</label>
+      <input type="number" placeholder="Precio" id="precio" th:field="*{precio}" required>
+    </div>
+    <div class="campo">
+      <label for="tipo">Tipo:</label>
+      <input type="text" placeholder="Tipo"  id="tipo" th:field="*{tipo}" required>
+    </div>
+    <div class="campo">
+    <button type="submit" >Guardar</button>
+    </div>
+  </form>
+  </div>
+</main>
+</body>
+</html>

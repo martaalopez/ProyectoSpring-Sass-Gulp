@@ -1,0 +1,19 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+.nav-principal{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem ;
+  @include m.tablet{
+    flex-direction: row;
+    gap:20rem;
+  }
+  a{
+    text-align:center;
+    color: v.$blanco;
+    font-size: 2rem ;
+    text-transform: uppercase;
+    font-weight: 70;
+    margin-bottom: 1rem;
+  }
+}

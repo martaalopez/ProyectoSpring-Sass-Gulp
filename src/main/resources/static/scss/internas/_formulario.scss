@@ -1,0 +1,56 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+body{
+  overflow: auto;
+}
+
+.contenido_formulario{
+
+  @include m.desktop {
+    @include m.grid(2, v.$separacion);
+    background-image: url(../img/producto.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 30%;
+  }
+
+}
+.formulario {
+  .campo {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      text-transform: uppercase;
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    input{
+      width: 100%;
+      border:.5rem solic v.$primario;
+      padding-right: 150px;
+      padding-bottom: 5px;
+      padding-left: 150px;
+    }
+    button[type="submit"] {
+      background-color: v.$primario;
+      width: 100%;
+      border: none;
+      padding-right: 150px;
+      padding-bottom: 5px;
+      padding-left: 150px;
+      color: v.$blanco;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &:hover{
+        cursor:pointer;
+      }
+    }
+  }
+}
